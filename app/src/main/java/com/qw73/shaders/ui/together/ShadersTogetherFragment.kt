@@ -31,8 +31,6 @@ class ShadersTogetherFragment : Fragment() {
         return viewBinding.root
     }
 
-
-
     companion object {
         fun instance(): ShadersTogetherFragment {
             return ShadersTogetherFragment()
