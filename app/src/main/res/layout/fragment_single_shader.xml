@@ -10,20 +10,75 @@
             type="com.qw73.shaders.ui.single.SingleShaderViewModel" />
     </data>
 
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".ui.single.SingleShaderFragment">
-
-    <FrameLayout
-        android:id="@+id/glContainer"
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        tools:context=".ui.single.SingleShaderFragment">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <LinearLayout
+            android:id="@+id/ll_param"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/corners"
+            android:elevation="10dp"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:paddingHorizontal="12dp"
+            android:paddingVertical="6dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:id="@+id/tv_shader_screen_size"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="1080 x 1080"
+                android:textColor="?attr/colorOnPrimary"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/tv_fps"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="60 fps"
+                android:textColor="?attr/colorOnPrimary"
+                android:textSize="14sp" />
+
+        </LinearLayout>
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:elevation="10dp"
+            android:orientation="vertical"
+            app:layout_constraintEnd_toEndOf="@id/ll_param"
+            app:layout_constraintStart_toStartOf="@id/ll_param"
+            app:layout_constraintTop_toBottomOf="@id/ll_param">
+
+            <Button
+                android:id="@+id/btn_minus"
+                android:layout_width="54dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="-"
+                android:textSize="18sp" />
+
+            <Button
+                android:id="@+id/btn_plus"
+                android:layout_width="54dp"
+                android:layout_height="wrap_content"
+                android:text="+"
+                android:textSize="18sp" />
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <FrameLayout
+            android:id="@+id/gl_container"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
